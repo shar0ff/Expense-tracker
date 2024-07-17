@@ -1,0 +1,50 @@
+<h1>Reports generator</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Selection for Reports</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="date-picker">
+    <label for="start-date">Select start date:</label>
+    <div class="input-wrapper">
+      <label for="start-date" class="label">Start date</label>
+      <input type="date" id="start-date" name="start-date">
+    </div>
+  </div>
+  <div class="date-picker">
+    <label for="end-date">Select end date:</label>
+    <div class="input-wrapper">
+      <label for="end-date" class="label">End date</label>
+      <input type="date" id="end-date" name="end-date">
+    </div>
+  </div>
+</div>
+<div class="button-container">
+  <button class="report-button" id="report-by-date" onclick="redirectToReport('by_date')">✔️ By date</button>
+  <button class="report-button" id="report-by-category" onclick="redirectToReport('by_category')">✔️ By category</button>
+  <button class="cancel-button" id="reset-dates" onclick="resetDates()">✖️ Cancel</button>
+</div>
+</body>
+</html>
+
+<script>
+    function redirectToReport(reportType) {
+        const startDate = document.getElementById('start_date').value;
+        const endDate = document.getElementById('end_date').value;
+        if (startDate && endDate) {
+            window.location.href = `/reports/${reportType}?start_date=${startDate}&end_date=${endDate}`;
+        } else {
+            alert('Please select both start date and end date.');
+        }
+    }
+
+    function resetDates() {
+        document.getElementById('start-date').value = '';
+        document.getElementById('end-date').value = '';
+    }
+</script>

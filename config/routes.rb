@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'reports', to: 'reports#index'
+  get 'reports/by_category', to: 'reports#report_by_category'
+  get 'reports/by_date', to: 'reports#report_by_date'
+  get 'main/index'
   resources :operations
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,5 +12,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "main#index"
 end
