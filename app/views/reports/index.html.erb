@@ -7,27 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Reports generator</h1>
-<div class="container">
-  <div class="date-picker">
-    <label for="start-date">Select start date:</label>
-    <div class="input-wrapper">
-      <label for="start-date" class="label">Start date</label>
-      <input type="date" id="start-date" name="start-date">
+<div class="main-content">
+  <h1>Reports generator</h1>
+  <div class="container">
+    <div class="date-picker">
+      <label for="start-date">Select start date:</label>
+      <div class="input-wrapper">
+        <label for="start-date" class="label">Start date</label>
+        <input type="date" id="start-date" name="start-date">
+      </div>
+    </div>
+    <div class="date-picker">
+      <label for="end-date">Select end date:</label>
+      <div class="input-wrapper">
+        <label for="end-date" class="label">End date</label>
+        <input type="date" id="end-date" name="end-date">
+      </div>
     </div>
   </div>
-  <div class="date-picker">
-    <label for="end-date">Select end date:</label>
-    <div class="input-wrapper">
-      <label for="end-date" class="label">End date</label>
-      <input type="date" id="end-date" name="end-date">
-    </div>
+  <div class="button-container">
+    <button class="report-button" id="report-by-date" onclick="redirectToReport('by_date')">✔️ By date</button>
+    <button class="report-button" id="report-by-category" onclick="redirectToReport('by_category')">✔️ By category</button>
+    <button class="cancel-button" id="reset-dates" onclick="resetDates()">✖️ Cancel</button>
   </div>
-</div>
-<div class="button-container">
-  <button class="report-button" id="report-by-date" onclick="redirectToReport('by_date')">✔️ By date</button>
-  <button class="report-button" id="report-by-category" onclick="redirectToReport('by_category')">✔️ By category</button>
-  <button class="cancel-button" id="reset-dates" onclick="resetDates()">✖️ Cancel</button>
 </div>
 
 <script>
