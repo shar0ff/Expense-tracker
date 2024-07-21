@@ -13,15 +13,21 @@ class OperationsController < ApplicationController
   # GET /operations/new
   def new
     @operation = Operation.new
+    @categories = Category.all.map { |category| [category.name, category.id] }
+    @types = Operation::VALID_OTYPES.map { |otype| [otype.capitalize, otype] }
   end
 
   # GET /operations/1/edit
   def edit
+    @categories = Category.all.map { |category| [category.name, category.id] }
+    @types = Operation::VALID_OTYPES.map { |otype| [otype.capitalize, otype] }
   end
 
   # POST /operations or /operations.json
   def create
     @operation = Operation.new(operation_params)
+    @categories = Category.all.map { |category| [category.name, category.id] }
+    @types = Operation::VALID_OTYPES.map { |otype| [otype.capitalize, otype] }
 
     respond_to do |format|
       if @operation.save
@@ -36,6 +42,9 @@ class OperationsController < ApplicationController
 
   # PATCH/PUT /operations/1 or /operations/1.json
   def update
+    @categories = Category.all.map { |category| [category.name, category.id] }
+    @types = Operation::VALID_OTYPES.map { |otype| [otype.capitalize, otype] }
+
     respond_to do |format|
       if @operation.update(operation_params)
         format.html { redirect_to operation_url(@operation), notice: "Operation was successfully updated." }

@@ -3,7 +3,7 @@ class Operation < ApplicationRecord
 
   paginates_per 10
 
-  VALID_OTYPES = ["income" "expense"].freeze
+  VALID_OTYPES = ["income", "expense"].freeze
 
   validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :description, presence: true, allow_blank: false

@@ -28,12 +28,12 @@
 
   <div>
     <%= form.label :category_id, style: "display: block" %>
-    <%= form.text_field :category_id %>
+    <%= form.select :category_id, @categories, prompt: 'Select a Category' %>
   </div>
 
   <div>
     <%= form.label :otype, style: "display: block" %>
-    <%= form.text_field :otype %>
+    <%= form.select :otype, @types, prompt: 'Select Operation Type' %>
   </div>
 
   <div>
