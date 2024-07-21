@@ -1,2 +1,38 @@
-<h1>Reports#report_by_category</h1>
-<p>Find me in app/views/reports/report_by_category.html.erb</p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1>Reports by categories</h1>
+
+<div>
+  <canvas id="ChartByCategory" width="750" height="750"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('ChartByCategory');
+
+    const data = {
+        labels: [
+            'Red',
+            'Blue',
+            'Yellow'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+    };
+
+    const ChartByCategory = new Chart(ctx, config);
+
+</script>
+
