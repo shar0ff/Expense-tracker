@@ -7,21 +7,24 @@
 </div>
 
 <script>
-    const ctx = document.getElementById('ChartByCategory');
+    const ctx = document.getElementById('ChartByCategory').getContext('2d');
 
     const data = {
-        labels: [
-            'Red',
-            'Blue',
-            'Yellow'
-        ],
+        labels: <%= @categories.to_json.html_safe %>,
         datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
+            label: 'Amount',
+            data: <%= @amounts.to_json.html_safe %>,
             backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                'rgb(255, 205, 86)',
+                'rgb(255, 158, 0)',
+                'rgb(128, 255, 0)',
+                'rgb(0, 255, 255)',
+                'rgb(51, 51, 255)',
+                'rgb(127, 0, 255)',
+                'rgb(255, 0, 255)',
+                'rgb(255, 0, 127)'
             ],
             hoverOffset: 4
         }]
@@ -30,9 +33,16 @@
     const config = {
         type: 'doughnut',
         data: data,
+        options: {
+            responsive: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'from <%= @start_date %> to <%= @end_date %>'
+                }
+            }
+        }
     };
 
     const ChartByCategory = new Chart(ctx, config);
-
 </script>
-

@@ -1,28 +1,27 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h1>Reports by dates</h1>
+<h1>Income and Expense Report</h1>
 
 <div>
   <canvas id="ChartByDate" width="750" height="750"></canvas>
 </div>
 
 <script>
-    const ctx = document.getElementById('ChartByDate');
+    const ctx = document.getElementById('ChartByDate').getContext('2d');
 
     const data = {
-        labels: [],
+        labels: <%= @dates.to_json.html_safe %>,
         datasets: [
             {
-            label: 'Incomes',
-            data: [],
-            fill: false,
-            borderColor: 'rgb(0, 204, 0)',
-            tension: 0.1
+                label: 'Incomes',
+                data: <%= @income_data.to_json.html_safe %>,
+                fill: false,
+                borderColor: 'rgb(0, 204, 0)',
+                tension: 0.1
             },
-
             {
                 label: 'Expenses',
-                data: [],
+                data: <%= @expense_data.to_json.html_safe %>,
                 fill: false,
                 borderColor: 'rgb(204, 0, 0)',
                 tension: 0.1
@@ -33,8 +32,32 @@
     const config = {
         type: 'line',
         data: data,
+        options: {
+            responsive: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'from <%= @start_date %> to <%= @end_date %>'
+                }
+            },
+            scales: {
+                x: {
+                    type: 'category',
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Amount'
+                    }
+                }
+            }
+        }
     };
 
     const ChartByDate = new Chart(ctx, config);
-
 </script>

@@ -9,4 +9,7 @@ class Operation < ApplicationRecord
   validates :description, presence: true, allow_blank: false
   validates :otype, inclusion: { in: VALID_OTYPES }
   validates :odate, presence: true
+
+  scope :incomes, -> { where(otype: "income") }
+  scope :expenses, -> { where(otype: "expense") }
 end
