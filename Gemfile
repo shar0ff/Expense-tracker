@@ -47,6 +47,10 @@ gem "bootsnap", require: false
 # Ensure pagination
 gem "kaminari"
 
+# Simplifies grouping data
+# by various time periods (like day, week, month, etc.) in ActiveRecord queries.
+gem 'groupdate'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
