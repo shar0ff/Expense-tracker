@@ -2,18 +2,30 @@
 
 <h1>Operations</h1>
 
-<div id="operations">
+<table class="operation-table">
+  <thead>
+  <tr>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Type</th>
+    <th>date</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
   <% @operations.each do |operation| %>
-    <%= render operation %>
-    <p>
-      <%= link_to "Show this operation", operation %>
-    </p>
+    <tr>
+      <td><%= operation.description %></td>
+      <td><%= operation.amount %></td>
+      <td><%= operation.otype %></td>
+      <td><%= operation.odate %></td>
+      <td><%= link_to "Show this operation", operation, class: "show-button" %></td>
+    </tr>
   <% end %>
+  </tbody>
+</table>
+
+<div class="pagination-links">
+  <%= link_to "New operation", new_operation_path, class: "new-button" %>
+  <%= paginate @operations %>
 </div>
-
-<div>
-  <%= link_to "New operation", new_operation_path %>
-</div>
-
-
-<%= paginate @operations %>

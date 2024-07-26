@@ -111,7 +111,7 @@ footer .container {
 footer .list-inline {
     padding-left: 0;
     list-style: none;
-    margin: 10px;
+    margin: 10px 0;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -124,4 +124,66 @@ footer .list-inline-item a {
 
 footer .list-inline-item a:hover {
     text-decoration: underline;
+}
+
+.category-table, .operation-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #f3ebff;
+    color: #333;
+}
+
+.category-table th, .category-table td, .operation-table th, .operation-table td {
+    border: 1px solid #75548e;
+    padding: 8px;
+    text-align: left;
+}
+
+.category-table th, .operation-table th {
+    background-color: #d1c4e9;
+    color: #333;
+}
+
+.category-table tr:nth-child(even), .operation-table tr:nth-child(even){
+    background-color: #e6dff5;
+}
+
+.category-table tr:nth-child(odd), .operation-table tr:nth-child(odd) {
+    background-color: #f3ebff;
+}
+
+.show-button, .new-button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.show-button {
+    background-color: #d1c4e9;
+}
+
+.new-button {
+    background-color: #97f0b6;
+}
+
+.show-button:hover {
+    background-color: #b39ddb;
+}
+
+.new-button:hover {
+    background-color: #72b58a;
+}
+
+.pagination-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
 }
