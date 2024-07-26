@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'reports', to: 'reports#index'
   get 'reports/by_category', to: 'reports#report_by_category'
   get 'reports/by_date', to: 'reports#report_by_date'
-  get 'main/index'
+  get 'main', to: 'main#index'
   resources :operations
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
