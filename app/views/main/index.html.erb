@@ -1,2 +1,41 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<div class="main-content">
+  <div>
+    <h1>Welcome to Expense Tracker</h1>
+    <h5>Your personal tool to manage and track your expenses efficiently.</h5>
+  </div>
+
+  <br>
+
+  <div class="card-group">
+    <div class="card">
+      <!-- %= image_tag 'category_report.png', class: 'card-img-top'% -->
+      <div class="card-body">
+        <h5 class="card-title">Report by categories</h5>
+        <p class="card-text">Easily track how much and on which category you spent or which category brought you the most income.</p>
+      </div>
+      <div class="card-footer">
+        <a href="/reports" class="report-button">Report by categories</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Operations table</h5>
+        <p class="card-text">Store all your income and expenses in a convenient way, edit and delete them easily.</p>
+      </div>
+      <div class="card-footer">
+        <a href="/operations" class="report-button">Operations</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Report by dates</h5>
+        <p class="card-text">Control how much and on what day you spend and earn.</p>
+      </div>
+      <div class="card-footer">
+        <a href="/reports" class="report-button">Report by dates</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
