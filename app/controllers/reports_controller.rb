@@ -6,13 +6,9 @@ class ReportsController < ApplicationController
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date
 
-    #operation_data = Operation.where(odate: @start_date..@end_date).group(:category).sum(:amount)
-    #@categories = operation_data.keys
-    #@amounts = operation_data.values
-
-    operation_data = Operation.where(odate: @start_date..@end_date.end_of_day).map{|o| [o.category, o.amount]}
-    @categories = operation_data.map{|e| e[0].name}
-    @amounts = operation_data.map{|e| e[1]}
+    operation_data = Operation.where(odate: @start_date..@end_date.end_of_day).group(:category).sum(:amount)
+    @categories = operation_data.keys.map(&:name)
+    @amounts = operation_data.values
   end
 
   def report_by_date
