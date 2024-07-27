@@ -1,8 +1,7 @@
-<%= form_with(model: operation) do |form| %>
+<%= form_with(model: operation, class: "form-container") do |form| %>
   <% if operation.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
-
       <ul>
         <% operation.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+  <div class="input-wrapper">
+    <%= form.label :amount, class: "label" %>
+    <%= form.text_field :amount, class: "input-field" %>
   </div>
 
-  <div>
-    <%= form.label :odate, style: "display: block" %>
-    <%= form.datetime_field :odate %>
+  <div class="input-wrapper">
+    <%= form.label :odate, class: "label" %>
+    <%= form.datetime_field :odate, class: "input-field" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="input-wrapper">
+    <%= form.label :description, class: "label" %>
+    <%= form.text_field :description, class: "input-field" %>
   </div>
 
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.select :category_id, @categories, prompt: 'Select a Category' %>
+  <div class="input-wrapper">
+    <%= form.label :category_id, class: "label" %>
+    <%= form.select :category_id, @categories, prompt: 'Select a Category', class: "select-field" %>
   </div>
 
-  <div>
-    <%= form.label :otype, style: "display: block" %>
-    <%= form.select :otype, @types, prompt: 'Select Operation Type' %>
+  <div class="input-wrapper">
+    <%= form.label :otype, class: "label" %>
+    <%= form.select :otype, @types, prompt: 'Select Operation Type', class: "select-field" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="button-container">
+    <%= form.submit "Create Operation", class: "report-button" %>
+    <%= link_to 'Back to operations', operations_path, class: "cancel-button" %>
   </div>
 <% end %>

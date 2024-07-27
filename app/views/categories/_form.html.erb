@@ -1,8 +1,7 @@
-<%= form_with(model: category) do |form| %>
+<%= form_with(model: category, class: "form-container") do |form| %>
   <% if category.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
       <ul>
         <% category.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,17 +10,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input-wrapper">
+    <%= form.label :name, class: "label" %>
+    <%= form.text_field :name, class: "input-field" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="input-wrapper">
+    <%= form.label :description, class: "label" %>
+    <%= form.text_field :description, class: "input-field" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="button-container">
+    <%= form.submit "Create Operation", class: "report-button" %>
+    <%= link_to 'Back to operations', operations_path, class: "cancel-button" %>
   </div>
 <% end %>
