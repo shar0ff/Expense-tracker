@@ -1,9 +1,30 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
+  name: Grocery
+  description: Fruits, vegetables, dairy, etc.
 
 two:
-  name: MyString
-  description: MyString
+  name: Eating out
+  description: Restaurants and cafes
+
+three:
+  name: Pets
+  description: Feed, grooming, etc.
+
+four:
+  name: Car
+  description: Repairing, insurance, fuel, etc.
+
+five:
+  name: Transport
+  description: Public transport tickets and taxi
+
+six:
+  name: Incomes
+  description: salary, presents, incomes from investments, etc.
+
+seven:
+  name: Investments
+  description: Buying gold ingots, crypto or bonds
+

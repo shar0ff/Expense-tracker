@@ -1,15 +1,50 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  amount: 9.99
-  odate: 2024-07-17 15:54:05
-  description: MyString
+operation_one:
+  amount: 50.75
+  odate: 2024-07-01 10:00:00
+  description: Grocery shopping
   category: one
-  otype: MyString
+  otype: expense
 
-two:
-  amount: 9.99
-  odate: 2024-07-17 15:54:05
-  description: MyString
+operation_two:
+  amount: 20.00
+  odate: 2024-07-03 12:30:00
+  description: Lunch at a cafe
   category: two
-  otype: MyString
+  otype: expense
+
+operation_three:
+  amount: 150.00
+  odate: 2024-07-05 09:00:00
+  description: Pet grooming
+  category: three
+  otype: expense
+
+operation_four:
+  amount: 300.00
+  odate: 2024-07-10 14:00:00
+  description: Car insurance payment
+  category: four
+  otype: expense
+
+operation_five:
+  amount: 25.00
+  odate: 2024-07-12 18:00:00
+  description: Public transport ticket
+  category: five
+  otype: expense
+
+operation_six:
+  amount: 2000.00
+  odate: 2024-07-15 17:00:00
+  description: Monthly salary
+  category: six
+  otype: income
+
+operation_seven:
+  amount: 500.00
+  odate: 2024-07-20 08:30:00
+  description: Investment in bonds
+  category: seven
+  otype: expense
