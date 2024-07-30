@@ -50,6 +50,8 @@ gem "kaminari"
 # Generate data samples
 gem "faker"
 
+gem 'rails-controller-testing'
+
 # Simplifies grouping data
 # by various time periods (like day, week, month, etc.) in ActiveRecord queries.
 gem 'groupdate'
